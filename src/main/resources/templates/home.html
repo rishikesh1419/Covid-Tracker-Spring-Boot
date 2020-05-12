@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>COVID-19 Tracker</title>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <style>
+            .increased {
+                color: red;
+            }
+
+            .okay {
+                color: green;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>COVID-19 Tracker</h1>
+
+            <div class="jumbotron">
+                <h1 class="display-4" th:text="${totalCases}">Total Cases</h1>
+                <p class="lead">Total cases reported as of today</p>
+                <p th:classappend="${newCases > 0} ? 'increased' : 'okay'"><span th:text="${newCases}">--</span> new cases since yesterday</p>
+    <!--            <hr class="my-4">-->
+    <!--            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>-->
+    <!--            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>-->
+            </div>
+
+            <table class="table">
+                <tr>
+                    <th>Country/Regions</th>
+                    <th>State/Province</th>
+                    <th>Total Cases Reported</th>
+                    <th>Change</th>
+                </tr>
+                <tr th:each="locStat : ${locStats}">
+                    <td th:text="${locStat.country}">--</td>
+                    <td th:text="${locStat.province}">--</td>
+                    <td th:text="${locStat.totalCases}">--</td>
+                    <td th:text="${locStat.oneDayDiff}" th:classappend="${locStat.oneDayDiff > 0} ? 'increased' : 'okay'">--</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
