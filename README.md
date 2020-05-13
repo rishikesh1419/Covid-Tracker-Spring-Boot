@@ -4,11 +4,11 @@
 Data Source: [JHU CSSE](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data).
 
 #### Screenshots
-![1](images/Covid1.jpg)
+![1](images/Covid1.JPG)
 
-![2](images/Covid2.jpg)
+![2](images/Covid2.JPG)
 
-![4](images/Covid3.jpg)
+![3](images/Covid3.JPG)
 
 #### Steps
 1. Visit [Spring Initializer](start.spring.io).
