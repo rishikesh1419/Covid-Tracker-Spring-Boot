@@ -13,12 +13,13 @@
                 color: green;
             }
         </style>
+        <script src="https://kit.fontawesome.com/0eb6781a2c.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
         <div class="container">
-            <h1>COVID-19 Tracker</h1>
-
+            <nav th:insert="fragments/navbar :: navbar"></nav>
+            <h1 style="margin-left: 3%; margin-top: 60px; margin-bottom:10px;">COVID-19 Stats (Global)</h1>
             <div class="jumbotron">
                 <h1 class="display-4" th:text="${totalCases}">Total Cases</h1>
                 <p class="lead">Total cases reported as of today</p>
